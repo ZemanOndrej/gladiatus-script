@@ -994,7 +994,7 @@
 
             function goExpedition() {
                 const inExpeditionPage = $("body").first().attr("id") === "locationPage";
-                const inEventExpeditionPage = document.getElementById("content").getElementsByTagName('img')[1].getAttribute('src') === 'img/ui/expedition_points2.png';
+                const inEventExpeditionPage = document?.getElementById("content")?.getElementsByTagName('img')?.[1]?.getAttribute('src') === 'img/ui/expedition_points2.png';
 
                 if (!inExpeditionPage || inEventExpeditionPage) {
                     document.getElementsByClassName("cooldown_bar_link")[0].click();
