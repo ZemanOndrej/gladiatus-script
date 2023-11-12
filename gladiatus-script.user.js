@@ -11,7 +11,7 @@
 // @grant        GM_addStyle
 // @grant        GM_getResourceText
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
-// @resource     customCSS_global  https://raw.githubusercontent.com/ebodziony/gladiatus-script/master/global.css?ver=2.6.4
+// @resource     customCSS_global  https://raw.githubusercontent.com/ZemanOndrej/gladiatus-script/master/global.css?ver=2.6.4
 // ==/UserScript==
 
 (function () {
@@ -30,7 +30,7 @@
     *     Global     *
     *****************/
 
-    const assetsUrl = 'https://raw.githubusercontent.com/ebodziony/gladiatus-script/master/assets';
+    const assetsUrl = 'https://raw.githubusercontent.com/ZemanOndrej/gladiatus-script/master/assets';
 
     let autoGoActive = sessionStorage.getItem('autoGoActive') === "true" ? true : false;
 
@@ -706,7 +706,7 @@
             $(`#set_event_monster_id_${eventMonsterId}`).addClass('active');
 
             $('#health_settings').addClass(doFood ? 'active' : 'inactive');
-            $(`#do_food_${doFood}`).addClass('active');
+            $(`#do_health_${doFood}`).addClass('active');
         };
 
         setActiveButtons();
@@ -1000,9 +1000,9 @@
                     document.getElementsByClassName("cooldown_bar_link")[0].click();
                 } else {
 
-                    if (document.getElementsByClassName("disabled")) {
-                        location.reload();
-                    }
+                    // if (document.getElementsByClassName("disabled")) {
+                    //     location.reload();
+                    // }
                     document.getElementsByClassName("expedition_button")[monsterId].click();
                 };
             };
