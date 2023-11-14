@@ -823,7 +823,10 @@
 
             // Double click (only works with Gladiatus Crazy addon)
             setTimeout(() => {
-                const firstCha = document.querySelector("#char > div.charmercsel> div").click();
+								if (!document.querySelector("#char > div.charmercsel").classList.contains("active")) {
+					
+									document.querySelector("#char > div.charmercsel> div").click();
+								}
                 const bestFood = document.querySelector("[style*='filter: drop-shadow(black 0px 0px 1px) drop-shadow(yellow 0px 0px 3px) drop-shadow(yellow 0px 0px 3px)']");
                 const nearFood = document.querySelector("#inv .ui-draggable-handle");
 
