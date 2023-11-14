@@ -810,12 +810,16 @@
         if (!isOverviewPage) {
             $("#mainmenu a.menuitem")[0].click();
         } else {
-            const tab = document.querySelectorAll("#inventory_nav > a")[foodTab - 1]
-            const clickEvent = new MouseEvent("click", {
-                bubbles: true,
-                cancelable: true
-            });
-            tab.dispatchEvent(clickEvent);
+						const tabs = document.querySelectorAll("#inventory_nav > a");
+						const selectedTab = [...tabs.values()].findIndex((tab) => tab.classList.contains("current"));
+						if (selectedTab !== foodTab - 1){
+							const tab = tabs[foodTab - 1]
+							const clickEvent = new MouseEvent("click", {
+									bubbles: true,
+									cancelable: true
+							});
+							tab.dispatchEvent(clickEvent);
+						}
 
             // Double click (only works with Gladiatus Crazy addon)
             setTimeout(() => {
